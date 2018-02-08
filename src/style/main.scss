@@ -1,0 +1,49 @@
+$font-color: #10debc;
+$font-color-second: #cdcdd8;
+$link-color: #b8bbc4;
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+html {
+  font-size: 10px;
+}
+
+body {
+  font: 16px Arial, sans-serif;
+  color: $font-color;
+  margin: 0;
+  padding: 0;
+  background-position: top center;
+  background-image: url(../img/bg.jpg);
+  // background-size: cover;
+  // background: rgb(85, 38, 38);
+}
+
+@mixin wrapper {
+  max-width: 1200px;
+  margin: 5rem auto;
+}
+.hero {
+  @include wrapper;
+  min-height: 2000px;
+  .menu {
+    position: sticky;
+    top: 0;
+  }
+  &__nav {
+    margin-top: 5rem;
+    font-size: 2.8rem;
+  }
+  &__link {
+    text-decoration: none;
+    color: $link-color;
+    margin: 0 2rem;
+  }
+}
+.menu {
+  display: flex;
+  justify-content: space-between;
+}
