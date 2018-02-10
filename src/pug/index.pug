@@ -16,6 +16,45 @@ html(lang="en")
           a(href='#').hero__link Research
           a(href='#').hero__link Explorers
           a(href='#').hero__link Our philosophy
-      h1.heading Title
+      
+      h1.heading SPACE EXPLORATION
+      p.
+        Space exploration is the ongoing discovery and exploration
+        of celestial structures in outer space
+      a(href="#") START EXPLORING
+
+      .graph
+        div
+          .graph__date JUNE 2016
+          .graph__event First attempts to launch a Mars exploration mission
+        div
+          .graph__date jULY 2020
+          .graph__event Landed on Mars, colony in place
+        div
+          .graph__date JANUARY 2100
+          .graph__event First signs of extraterrestrial intelligence found
+        div
+          .graph__date AUGUST 2300
+          .graph__event Aliens have conquered our galaxy
+        div
+          .graph__date FEBRUARY 2534
+          .graph__event Humans have decided to whoop some alien asses
+
+    section.analytics
+      .subtitle ANALYTICS
+      h2.heading You should take a quick look at our data
+      p We want to show you how the process works.
+        br
+        | Display data for:
+      select#month(name="month")
+        option(value="october") October
+      .pillar
+        - var i = 0
+        while i < 13
+          - i++
+          .pillar__item
+            .pillar__fill
+            .pillar__date oct #{i} 
+
 
   script(src='./js/main.js')
