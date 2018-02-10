@@ -42,8 +42,39 @@ body {
     color: $link-color;
     margin: 0 2rem;
   }
+  &__heading {
+    font-size: 10rem;
+    font-weight: 700;
+    text-align: center;
+  }
+  &__description {
+    text-align: center;
+    max-width: 50%;
+    margin: 6rem auto;
+
+  }
 }
 .menu {
   display: flex;
   justify-content: space-between;
+}
+.pillar {
+  display: flex;
+  justify-content: space-between;
+  &__item {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+}
+
+.pillar__fill {
+
+  width: 9rem;
+  height: 50rem;
+  background-image: linear-gradient(to bottom, rgba(73,155,234,1) 0%, rgba(73,155,234,1) 45%, rgba(252,254,255,1) 46%, rgba(252,254,255,1) 57%, rgba(40,139,189,1) 58%, rgba(32,124,229,1) 100%);
+  background-size: 100% 1rem; 
+  background-repeat: repeat-y;
+  
 }

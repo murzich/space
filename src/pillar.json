@@ -1,10 +1,4 @@
-console.log('hey');
-
-localStorage.clear();
-console.log('localStorage is cleared')
-
-// itemPillar is from server JSON file
-var itemPillar = {
+{
   pillar: [
     {
       'date': 'oct 1',
@@ -59,12 +53,4 @@ var itemPillar = {
       'fill': 0.55
     }    
   ]
-};
-
-if (!localStorage.getItem('itemPillar')) {
-  localStorage.setItem('itemPillar', JSON.stringify(itemPillar));
 }
-
-var localItemPillar = JSON.parse(localStorage.getItem('itemPillar'));
-
-// weight = calc(100% * localItemPillar.pillar[#].fill)

@@ -17,8 +17,8 @@ html(lang="en")
           a(href='#').hero__link Explorers
           a(href='#').hero__link Our philosophy
       
-      h1.heading SPACE EXPLORATION
-      p.
+      h1.hero__heading SPACE EXPLORATION
+      p.hero__description.
         Space exploration is the ongoing discovery and exploration
         of celestial structures in outer space
       a(href="#") START EXPLORING
@@ -52,9 +52,21 @@ html(lang="en")
         - var i = 0
         while i < 13
           - i++
-          .pillar__item
+          .pillar__item(data-date="oct " + i)
             .pillar__fill
-            .pillar__date oct #{i} 
+            .pillar__date oct #{i}
+      .quick
+        div Get a quick info about us
+        a(href='#').quick__download
+          img(src='./img/arrow.png')
+          p Company Profile
+          p Download PDF
+        a(href='#').quick__download
+          img(src='./img/arrow.png')  
+          p Annual Report
+          p Download PDF
+
+        
 
 
   script(src='./js/main.js')
