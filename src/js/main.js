@@ -67,4 +67,56 @@ if (!localStorage.getItem('itemPillar')) {
 
 var localItemPillar = JSON.parse(localStorage.getItem('itemPillar'));
 
+
 // weight = calc(100% * localItemPillar.pillar[#].fill)
+
+localItemPillar.pillar.forEach( function(item) {
+  console.log(item);
+  document.querySelector('[data-date="' + item.date + '"]')
+    .style.height = item.fill*100 + "%";
+});
+
+
+var ctx = document.getElementById('myChart');
+var config = {
+   'type': 'radar',
+   'data': {
+       'labels': ['Characteristic', 'Weight', 'Economy', 'Designing', 'Coding', 'Cycling', 'Running'],
+       'datasets': [{
+           'label': 'My First Dataset',
+           'data': [65, 59, 90, 81, 56, 55, 40],
+           'fill': true,
+           'backgroundColor': 'rgba(255, 99, 132, 0.2)',
+           'borderColor': 'rgb(255, 99, 132)',
+           'pointBackgroundColor': 'rgb(255, 99, 132)',
+           'pointBorderColor': '#fff',
+           'pointHoverBackgroundColor': '#fff',
+           'pointHoverBorderColor': 'rgb(255, 99, 132)'
+       }]
+   },
+   'options': {
+       'elements': {
+           'line': {
+               'tension': 0,
+               'borderWidth': 3
+           }
+       }
+   }
+};
+var myRadarChart = new Chart(ctx, config);
+display.onclick = function(event){
+    var label = event.target.value;
+    if (event.target.checked) {
+        if (config.data.labels.indexOf(label) !== -1){
+            return;
+        }
+        config.data.labels.push(label);
+        config.data.datasets[0].data.push(20);
+    } else {
+        var indexLabel = config.data.labels.indexOf(label);
+        console.log(indexLabel);
+        config.data.labels.splice(indexLabel, 1);
+        config.data.datasets[0].data.splice(indexLabel, 1);
+   }
+    window.myRadarChart.update();
+}
